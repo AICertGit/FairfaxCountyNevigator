@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="820" viewBox="0 0 1400 820" role="img" aria-label="Fairfax Resource Navigator architecture flow preview">
+  <title>Fairfax Resource Navigator Architecture Flow Preview</title>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#385568"/>
+    </marker>
+    <style>
+      .bg { fill: #f4f7f8; }
+      .title { fill: #071f2c; font: 700 34px Arial, Helvetica, sans-serif; }
+      .subtitle { fill: #5d6874; font: 18px Arial, Helvetica, sans-serif; }
+      .lane-title { fill: #071f2c; font: 700 18px Arial, Helvetica, sans-serif; }
+      .node-title { fill: #071f2c; font: 700 17px Arial, Helvetica, sans-serif; }
+      .node-text { fill: #34414d; font: 14px Arial, Helvetica, sans-serif; }
+      .small { fill: #5d6874; font: 13px Arial, Helvetica, sans-serif; }
+      .edge { stroke: #385568; stroke-width: 2.5; fill: none; marker-end: url(#arrow); }
+      .edge-soft { stroke: #7d8d99; stroke-width: 2; stroke-dasharray: 8 8; fill: none; marker-end: url(#arrow); }
+      .lane { fill: #ffffff; stroke: #d9e1e8; stroke-width: 1.5; }
+      .person { fill: #f7fbff; stroke: #071f2c; stroke-width: 2.5; }
+      .surface { fill: #eaf3f7; stroke: #123446; stroke-width: 2; }
+      .logic { fill: #fff7e8; stroke: #b67822; stroke-width: 2; }
+      .answer { fill: #eef7ed; stroke: #4d7b4a; stroke-width: 2; }
+      .source { fill: #ffffff; stroke: #5d6874; stroke-width: 2; }
+      .future { fill: #f2eef8; stroke: #6f5f94; stroke-width: 2; }
+    </style>
+  </defs>
+
+  <rect class="bg" width="1400" height="820"/>
+  <text class="title" x="70" y="62">Fairfax Resource Navigator Architecture</text>
+  <text class="subtitle" x="70" y="94">Local static demo plus ADK proof path, grounded in official Fairfax source snapshots</text>
+
+  <rect class="lane" x="60" y="130" width="1280" height="280" rx="14"/>
+  <text class="lane-title" x="90" y="166">Resident Demo Path</text>
+
+  <rect class="lane" x="60" y="450" width="1280" height="250" rx="14"/>
+  <text class="lane-title" x="90" y="486">ADK Proof Path and Future Deployment</text>
+
+  <rect class="person" x="90" y="220" width="180" height="84" rx="10"/>
+  <text class="node-title" x="180" y="253" text-anchor="middle">Resident / Reviewer</text>
+  <text class="node-text" x="180" y="277" text-anchor="middle">plain-language need</text>
+
+  <rect class="surface" x="330" y="210" width="190" height="104" rx="10"/>
+  <text class="node-title" x="425" y="246" text-anchor="middle">GitHub Pages</text>
+  <text class="node-text" x="425" y="270" text-anchor="middle">root index.html</text>
+  <text class="small" x="425" y="292" text-anchor="middle">submission wrapper</text>
+
+  <rect class="surface" x="580" y="210" width="200" height="104" rx="10"/>
+  <text class="node-title" x="680" y="246" text-anchor="middle">Resident Demo UI</text>
+  <text class="node-text" x="680" y="270" text-anchor="middle">frontend/index.html</text>
+  <text class="small" x="680" y="292" text-anchor="middle">intake + panels</text>
+
+  <rect class="logic" x="840" y="210" width="210" height="104" rx="10"/>
+  <text class="node-title" x="945" y="246" text-anchor="middle">Deterministic Router</text>
+  <text class="node-text" x="945" y="270" text-anchor="middle">frontend/app.js</text>
+  <text class="small" x="945" y="292" text-anchor="middle">domain + urgency</text>
+
+  <rect class="answer" x="1110" y="210" width="190" height="104" rx="10"/>
+  <text class="node-title" x="1205" y="242" text-anchor="middle">Guided Answer</text>
+  <text class="node-text" x="1205" y="266" text-anchor="middle">route, next steps,</text>
+  <text class="node-text" x="1205" y="288" text-anchor="middle">confidence, citations</text>
+
+  <path class="edge" d="M270 262 H330"/>
+  <path class="edge" d="M520 262 H580"/>
+  <path class="edge" d="M780 262 H840"/>
+  <path class="edge" d="M1050 262 H1110"/>
+
+  <rect class="source" x="630" y="338" width="250" height="64" rx="10"/>
+  <text class="node-title" x="755" y="364" text-anchor="middle">Official Source Snapshots</text>
+  <text class="small" x="755" y="386" text-anchor="middle">docs/source_inventory.md + docs/raw</text>
+
+  <rect class="source" x="920" y="338" width="250" height="64" rx="10"/>
+  <text class="node-title" x="1045" y="364" text-anchor="middle">Service Catalog</text>
+  <text class="small" x="1045" y="386" text-anchor="middle">domains, triage rules, camp matching</text>
+
+  <path class="edge-soft" d="M945 314 C930 338 860 352 880 370"/>
+  <path class="edge-soft" d="M1000 314 C1015 338 1025 346 1045 338"/>
+
+  <rect class="surface" x="90" y="540" width="190" height="96" rx="10"/>
+  <text class="node-title" x="185" y="576" text-anchor="middle">ADK Playground</text>
+  <text class="node-text" x="185" y="600" text-anchor="middle">local proof view</text>
+
+  <rect class="logic" x="340" y="540" width="220" height="96" rx="10"/>
+  <text class="node-title" x="450" y="572" text-anchor="middle">ADK Agent</text>
+  <text class="node-text" x="450" y="596" text-anchor="middle">app/agent.py</text>
+  <text class="small" x="450" y="616" text-anchor="middle">FairfaxServiceNavigatorAgent</text>
+
+  <rect class="logic" x="620" y="540" width="210" height="96" rx="10"/>
+  <text class="node-title" x="725" y="572" text-anchor="middle">Routing Functions</text>
+  <text class="node-text" x="725" y="596" text-anchor="middle">route_request()</text>
+  <text class="small" x="725" y="616" text-anchor="middle">generate_response()</text>
+
+  <rect class="answer" x="890" y="540" width="190" height="96" rx="10"/>
+  <text class="node-title" x="985" y="574" text-anchor="middle">ADK Response</text>
+  <text class="node-text" x="985" y="598" text-anchor="middle">route + citations</text>
+
+  <rect class="future" x="1140" y="540" width="160" height="96" rx="10"/>
+  <text class="node-title" x="1220" y="572" text-anchor="middle">Future Cloud</text>
+  <text class="node-text" x="1220" y="596" text-anchor="middle">Agent Engine</text>
+  <text class="small" x="1220" y="616" text-anchor="middle">optional deploy</text>
+
+  <path class="edge" d="M280 588 H340"/>
+  <path class="edge" d="M560 588 H620"/>
+  <path class="edge" d="M830 588 H890"/>
+  <path class="edge-soft" d="M1080 588 H1140"/>
+
+  <path class="edge-soft" d="M725 540 C730 475 750 435 755 402"/>
+  <path class="edge-soft" d="M770 540 C845 470 960 422 1045 402"/>
+
+  <rect x="70" y="730" width="1260" height="48" rx="10" fill="#071f2c"/>
+  <text x="700" y="760" text-anchor="middle" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700">
+    Demo principle: reliable local routing first, official citations always, cloud deployment later.
+  </text>
+</svg>

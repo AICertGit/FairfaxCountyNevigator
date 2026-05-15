@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-label="Fairfax Resource Navigator mark">
+  <rect width="96" height="96" rx="18" fill="#123f52"/>
+  <path d="M22 65c14-23 31-33 52-34" fill="none" stroke="#f2c14e" stroke-width="7" stroke-linecap="round"/>
+  <path d="M22 31c12 9 22 22 30 42" fill="none" stroke="#6fb56c" stroke-width="7" stroke-linecap="round"/>
+  <circle cx="22" cy="65" r="7" fill="#ffffff"/>
+  <circle cx="52" cy="73" r="7" fill="#ffffff"/>
+  <circle cx="74" cy="31" r="7" fill="#ffffff"/>
+  <path d="M30 20h36" stroke="#ffffff" stroke-width="5" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Fairfax Resource Navigator</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div id="loginOverlay" class="login-overlay" role="dialog" aria-labelledby="loginTitle" aria-modal="true">
+      <section class="login-card">
+        <div class="login-seal-wrap">
+          <img src="./assets/fairfax-seal.svg" alt="Fairfax County Virginia seal" class="login-seal" />
+        </div>
+        <p class="eyebrow">Fairfax County</p>
+        <h1 id="loginTitle">Fairfax Resource Navigator</h1>
+        <p class="login-copy">Sign in to preview a resident intake and routing workspace.</p>
+        <form id="loginForm" class="login-form">
+          <label>
+            Email
+            <input id="loginEmail" type="email" value="resident.preview@fairfax.local" />
+          </label>
+          <label>
+            Access code
+            <input id="loginCode" type="password" value="demo" />
+          </label>
+          <button type="submit">Enter Preview</button>
+        </form>
+      </section>
+    </div>
+
+    <main class="app-shell">
+      <header class="site-header">
+        <div class="site-brand">
+          <img src="./assets/fairfax-seal.svg" alt="Fairfax County Virginia seal" class="county-seal" />
+          <div class="site-title">
+            <h1>Fairfax Resource Navigator</h1>
+            <p>Resident service guidance</p>
+          </div>
+        </div>
+        <div class="site-actions" aria-label="Status">
+          <span>Local preview</span>
+          <span>Cited routing</span>
+        </div>
+      </header>
+
+      <aside id="leftPanel" class="sidebar" aria-label="Navigator context">
+        <section class="panel">
+          <button class="panel-toggle" type="button" aria-expanded="true">
+            <span>Common Requests</span>
+            <span aria-hidden="true">−</span>
+          </button>
+          <div class="panel-body">
+          <button class="prompt-chip" data-prompt="I need help with my Fairfax car tax bill.">Car tax</button>
+          <button class="prompt-chip" data-prompt="My neighbor is doing unpermitted construction. What should I do?">Code complaint</button>
+          <button class="prompt-chip" data-prompt="I need urgent housing or safety help tonight.">Housing help</button>
+          <button class="prompt-chip" data-prompt="Are there still good summer camps in Fairfax County for my 9-year-old who likes sports and AI or STEM?">Summer camps</button>
+          <button class="prompt-chip" data-prompt="What Fairfax resources can help with food, rent, utilities, and basic needs?">Basic needs</button>
+          <button class="prompt-chip" data-prompt="Where do I go for trash, recycling, or a missed pickup in Fairfax County?">Trash or recycling</button>
+          <button class="prompt-chip" data-prompt="I need mental health or addiction support for someone in Fairfax County.">Mental health</button>
+          <button class="prompt-chip" data-prompt="Where can an older adult get Meals on Wheels or aging in place support?">Older adults</button>
+          </div>
+        </section>
+
+        <section class="panel">
+          <button class="panel-toggle" type="button" aria-expanded="true">
+            <span>Client Profile</span>
+            <span aria-hidden="true">−</span>
+          </button>
+          <div class="panel-body">
+          <div class="form-grid">
+            <label>
+              Parent/guardian age
+              <input id="parentAgeInput" type="number" min="16" max="110" placeholder="38" />
+            </label>
+            <label>
+              Household ZIP code
+              <input id="zipInput" inputmode="numeric" maxlength="5" placeholder="22030" />
+            </label>
+            <label>
+              Household size
+              <input id="householdInput" type="number" min="1" max="12" value="3" />
+            </label>
+            <label>
+              Number of kids
+              <input id="kidsInput" type="number" min="0" max="10" value="1" />
+            </label>
+            <label>
+              Approx. income range
+              <select id="incomeInput">
+                <option value="not shared">Prefer not to share</option>
+                <option value="under $35k">Under $35k</option>
+                <option value="$35k-$75k">$35k-$75k</option>
+                <option value="$75k-$125k">$75k-$125k</option>
+                <option value="$125k+">$125k+</option>
+              </select>
+            </label>
+            <label>
+              Urgency
+              <select id="urgencyInput">
+                <option value="routine">Routine</option>
+                <option value="time-sensitive">Time-sensitive</option>
+                <option value="urgent">Urgent</option>
+                <option value="immediate safety risk">Immediate safety risk</option>
+              </select>
+            </label>
+          </div>
+          <h3 class="field-heading">Services Wanted</h3>
+          <div class="interest-grid" aria-label="Services wanted">
+            <label><input type="checkbox" value="housing" /> Housing</label>
+            <label><input type="checkbox" value="food" /> Food</label>
+            <label><input type="checkbox" value="utilities" /> Utilities</label>
+            <label><input type="checkbox" value="taxes" /> Taxes</label>
+            <label><input type="checkbox" value="permits/code" /> Permits/code</label>
+            <label><input type="checkbox" value="parks/camps" checked /> Parks/camps</label>
+            <label><input type="checkbox" value="trash/recycling" /> Trash/recycling</label>
+            <label><input type="checkbox" value="health" /> Health</label>
+            <label><input type="checkbox" value="transportation" /> Transportation</label>
+            <label><input type="checkbox" value="public safety" /> Public safety</label>
+            <label><input type="checkbox" value="older adults" /> Older adults</label>
+            <label><input type="checkbox" value="childcare" /> Childcare</label>
+            <label><input type="checkbox" value="water/sewer" /> Water/sewer</label>
+          </div>
+          <div class="form-grid child-context">
+            <label>
+              Child age, if relevant
+              <input id="ageInput" type="number" min="3" max="18" value="9" />
+            </label>
+            <label>
+              Preferred area
+              <select id="areaInput">
+                <option value="no area preference">No area preference</option>
+                <option value="Centreville / Sully">Centreville / Sully</option>
+                <option value="Herndon">Herndon</option>
+                <option value="Reston">Reston</option>
+                <option value="McLean">McLean</option>
+                <option value="Mount Vernon">Mount Vernon</option>
+                <option value="Franconia">Franconia</option>
+              </select>
+            </label>
+            <label>
+              Interests, if relevant
+              <input id="interestInput" value="sports, AI/tech, STEM" />
+            </label>
+          </div>
+          </div>
+        </section>
+
+        <section class="panel status-panel">
+          <button class="panel-toggle" type="button" aria-expanded="true">
+            <span>Routing Guardrails</span>
+            <span aria-hidden="true">−</span>
+          </button>
+          <div class="panel-body">
+          <ul>
+            <li>Official Fairfax sources only</li>
+            <li>No eligibility promises</li>
+            <li>Escalate safety and crisis needs</li>
+            <li>Source-grounded recommendations</li>
+          </ul>
+          </div>
+        </section>
+        <div id="leftResize" class="resize-handle resize-handle-left" aria-hidden="true"></div>
+      </aside>
+
+      <section class="workspace" aria-label="Chat workspace">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Fairfax County</p>
+            <h2>Find the right Fairfax County resource</h2>
+          </div>
+        </header>
+
+        <section id="messages" class="messages" aria-live="polite">
+          <article class="message assistant">
+            <div class="avatar">FR</div>
+            <div class="bubble">
+              <p>
+                Tell me what the client needs. I will route the request, flag urgency,
+                and cite official Fairfax sources across major county service areas. I will not ask for names or exact home addresses.
+              </p>
+            </div>
+          </article>
+        </section>
+
+        <form id="chatForm" class="composer">
+          <textarea
+            id="questionInput"
+            rows="2"
+            placeholder="Example: I need help with rent, utilities, car tax, summer camps, permits, trash, or safety."
+          ></textarea>
+          <button type="submit">Ask</button>
+        </form>
+      </section>
+
+      <aside id="rightPanel" class="inspector" aria-label="Route details">
+        <section class="route-card">
+          <p class="eyebrow">Current Route</p>
+          <h2 id="routeTitle">Waiting for request</h2>
+          <dl>
+            <div>
+              <dt>Destination</dt>
+              <dd id="routeDestination">Ask a question to generate a route.</dd>
+            </div>
+            <div>
+              <dt>Urgency</dt>
+              <dd id="routeUrgency">Not assessed yet.</dd>
+            </div>
+            <div>
+              <dt>Confidence</dt>
+              <dd><span id="confidenceMeter" class="meter"><span></span></span><strong id="confidenceText">--</strong></dd>
+            </div>
+          </dl>
+        </section>
+
+        <section class="sources-card">
+          <h2>Citations</h2>
+          <div id="sourceList" class="source-list">
+            <p class="empty">Citations will appear here after an answer.</p>
+          </div>
+        </section>
+        <div id="rightResize" class="resize-handle resize-handle-right" aria-hidden="true"></div>
+      </aside>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
