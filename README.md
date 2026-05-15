@@ -2,6 +2,9 @@
 
 Fairfax Resource Navigator is a local Google ADK starter-pack demo for routing Fairfax County resident questions to the right county service area. It is designed as a human-in-the-loop civic AI prototype: source-grounded, privacy-conscious, and conservative around emergencies, eligibility, tax, legal, safety, and account-specific questions.
 
+## Weblink
+https://aicertgit.github.io/FairfaxCountyNevigator/
+
 ## Demo Status
 
 - Local resident UI: `frontend/`
