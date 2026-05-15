@@ -6,7 +6,8 @@ This folder collects the files and notes to review before publishing the Fairfax
 
 - `../README.md` - GitHub-facing project overview and run/test notes.
 - `../index.html` - GitHub Pages entry point that presents and embeds the local demo UI.
-- `../FINAL_SUBMISSION_ONE_PAGER.md` - short project narrative for reviewers.
+- `../FINAL_SUBMISSION_ONE_PAGER.html` - judge-friendly one-pager page showing the PNG handout.
+- `../github_submission/final_one_page_demo.png` - direct one-pager image.
 - `../docs/demo_architecture.html` - judge-friendly architecture page with the PNG/SVG diagram.
 - `../docs/demo_architecture.md` - architecture notes, Mermaid flow diagrams, privacy model, data flow, and deployment path.
 - `../docs/demo_service_catalog.md` - service domains, routing categories, and triage rules.

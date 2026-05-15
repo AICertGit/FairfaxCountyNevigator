@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Fairfax Resource Navigator One-Pager</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --ink: #17212b;
+        --muted: #5d6874;
+        --line: #d9e1e8;
+        --wash: #f4f7f8;
+        --civic: #071f2c;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: var(--wash);
+        color: var(--ink);
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 18px 28px;
+        background: var(--civic);
+        color: #ffffff;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+
+      .brand img {
+        width: 58px;
+        height: 58px;
+      }
+
+      h1,
+      p {
+        margin: 0;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+
+      header p {
+        margin-top: 4px;
+        color: #c7d7df;
+      }
+
+      nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 10px;
+      }
+
+      nav a {
+        border: 1px solid rgba(255, 255, 255, 0.24);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.08);
+        color: #ffffff;
+        padding: 10px 12px;
+        text-decoration: none;
+        font-weight: 700;
+      }
+
+      nav a.primary {
+        background: #ffffff;
+        color: var(--civic);
+      }
+
+      main {
+        width: min(1280px, calc(100% - 32px));
+        margin: 18px auto 40px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #ffffff;
+        padding: 18px;
+      }
+
+      main img {
+        display: block;
+        width: 100%;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #ffffff;
+      }
+
+      @media (max-width: 760px) {
+        header {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        nav {
+          justify-content: flex-start;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="brand">
+        <img src="./frontend/assets/fairfax-seal.svg" alt="Fairfax County Virginia seal" />
+        <div>
+          <h1>Fairfax Resource Navigator One-Pager</h1>
+          <p>Judge-friendly PNG handout for the Google Public Sector Hackathon submission.</p>
+        </div>
+      </div>
+      <nav aria-label="One-pager links">
+        <a class="primary" href="./index.html">Open Demo</a>
+        <a href="./github_submission/final_one_page_demo.png">Open PNG</a>
+        <a href="./github_submission/final_one_page_demo.pdf">Open PDF</a>
+        <a href="./docs/demo_architecture.html">Architecture</a>
+      </nav>
+    </header>
+    <main>
+      <img src="./github_submission/final_one_page_demo.png" alt="Final one-page demo handout" />
+    </main>
+  </body>
+</html>
