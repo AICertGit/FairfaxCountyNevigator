@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Fairfax Resource Navigator Architecture</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --ink: #17212b;
+        --muted: #5d6874;
+        --line: #d9e1e8;
+        --wash: #f4f7f8;
+        --civic: #071f2c;
+        --civic-mid: #123446;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: var(--wash);
+        color: var(--ink);
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        padding: 20px 28px;
+        background: var(--civic);
+        color: #ffffff;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        min-width: 0;
+      }
+
+      .brand img {
+        width: 58px;
+        height: 58px;
+        flex: 0 0 auto;
+      }
+
+      h1,
+      h2,
+      p {
+        margin: 0;
+      }
+
+      h1 {
+        font-size: 24px;
+        line-height: 1.15;
+      }
+
+      header p {
+        margin-top: 4px;
+        color: #c7d7df;
+      }
+
+      nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 10px;
+      }
+
+      nav a,
+      .button {
+        border: 1px solid rgba(255, 255, 255, 0.24);
+        border-radius: 8px;
+        color: #ffffff;
+        background: rgba(255, 255, 255, 0.08);
+        padding: 10px 12px;
+        text-decoration: none;
+        font-weight: 700;
+      }
+
+      nav a.primary {
+        background: #ffffff;
+        color: var(--civic);
+      }
+
+      main {
+        width: min(1440px, calc(100% - 36px));
+        margin: 18px auto 40px;
+      }
+
+      .summary {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 18px;
+        margin-bottom: 18px;
+      }
+
+      .card {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #ffffff;
+        padding: 22px;
+      }
+
+      .card h2 {
+        color: var(--civic);
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+
+      .card p,
+      .card li {
+        color: var(--muted);
+        line-height: 1.45;
+      }
+
+      ul {
+        margin: 10px 0 0;
+        padding-left: 22px;
+      }
+
+      .diagram-card {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #ffffff;
+        padding: 18px;
+      }
+
+      .diagram-card img {
+        display: block;
+        width: 100%;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #f4f7f8;
+      }
+
+      .asset-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 14px;
+      }
+
+      .asset-links a {
+        border-radius: 8px;
+        background: var(--civic);
+        color: #ffffff;
+        padding: 10px 12px;
+        text-decoration: none;
+        font-weight: 700;
+      }
+
+      @media (max-width: 860px) {
+        header {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        nav {
+          justify-content: flex-start;
+        }
+
+        .summary {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="brand">
+        <img src="../frontend/assets/fairfax-seal.svg" alt="Fairfax County Virginia seal" />
+        <div>
+          <h1>Fairfax Resource Navigator Architecture</h1>
+          <p>Visual flow for the local demo, ADK proof path, source catalog, and future cloud deployment.</p>
+        </div>
+      </div>
+      <nav aria-label="Architecture links">
+        <a class="primary" href="../index.html">Open Demo</a>
+        <a href="../github_submission/final_one_page_demo.png">One-Pager PNG</a>
+        <a href="./assets/architecture-flow-preview.png">Architecture PNG</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="summary">
+        <article class="card">
+          <h2>What This Shows</h2>
+          <p>
+            The diagram highlights the judge-facing GitHub Pages app, the resident demo UI,
+            deterministic routing logic, official Fairfax source snapshots, and the ADK proof path.
+            The cloud deployment lane is intentionally shown as future/optional.
+          </p>
+        </article>
+        <article class="card">
+          <h2>Demo Principles</h2>
+          <ul>
+            <li>Reliable local routing first.</li>
+            <li>Official-source citations always.</li>
+            <li>No live model API required for chat.</li>
+            <li>Cloud deployment path available after review.</li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="diagram-card">
+        <img src="./assets/architecture-flow-preview.png" alt="Fairfax Resource Navigator architecture flow diagram" />
+        <div class="asset-links">
+          <a href="./assets/architecture-flow-preview.png" target="_blank" rel="noreferrer">Open PNG</a>
+          <a href="./assets/architecture-flow-preview.svg" target="_blank" rel="noreferrer">Open SVG</a>
+          <a href="./demo_architecture.md" target="_blank" rel="noreferrer">Markdown Source</a>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
