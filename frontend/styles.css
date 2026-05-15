@@ -138,6 +138,7 @@ textarea {
   justify-content: flex-end;
   gap: 8px;
   flex: 0 0 auto;
+  max-width: min(520px, 48vw);
 }
 
 .site-actions span,
@@ -536,41 +537,36 @@ dd {
 
 .submission-assets {
   display: grid;
-  gap: 12px;
+  gap: 10px;
 }
 
-.submission-assets a {
+.submission-link {
   display: grid;
-  gap: 8px;
+  gap: 4px;
   border: 1px solid var(--line);
   border-radius: 8px;
   background: #f8fbfc;
-  padding: 8px;
+  padding: 11px;
   color: var(--civic);
   text-decoration: none;
-  font-weight: 700;
 }
 
-.submission-assets a:hover,
-.submission-assets a:focus {
+.submission-link:hover,
+.submission-link:focus {
   border-color: var(--civic-mid);
   box-shadow: 0 0 0 3px var(--civic-light);
   outline: none;
 }
 
-.submission-assets img {
-  display: block;
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  border: 1px solid var(--line);
-  border-radius: 6px;
-  background: #ffffff;
-  object-fit: cover;
-  object-position: top center;
+.submission-link strong {
+  font-size: 14px;
 }
 
-.submission-assets span {
+.submission-link span {
+  color: var(--muted);
   font-size: 13px;
+  font-weight: 400;
+  line-height: 1.35;
 }
 
 @media (max-width: 1100px) {
