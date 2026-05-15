@@ -212,6 +212,7 @@ gcloud*.json
 
 # Local preview tooling
 .chrome-preview/
+.chrome-preview-*/
 
 # A2A Inspector
 tools/a2a-inspector/

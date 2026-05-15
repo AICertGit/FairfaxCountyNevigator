@@ -3,7 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Fairfax Resource Navigator Demo</title>
+    <title>Fairfax Resource Navigator</title>
+    <meta http-equiv="refresh" content="0; url=./frontend/index.html" />
     <style>
       :root {
         color-scheme: light;
@@ -11,10 +12,7 @@
         --muted: #5d6874;
         --line: #d9e1e8;
         --civic: #071f2c;
-        --civic-mid: #123446;
         --wash: #f4f7f8;
-        --panel: #ffffff;
-        --gold: #b67822;
       }
 
       * {
@@ -22,216 +20,62 @@
       }
 
       body {
+        display: grid;
+        min-height: 100vh;
         margin: 0;
+        place-items: center;
         background: var(--wash);
         color: var(--ink);
         font-family: Arial, Helvetica, sans-serif;
       }
 
-      a {
-        color: inherit;
-      }
-
-      .page-header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 20px;
-        padding: 18px 28px;
-        background: var(--civic);
-        color: #ffffff;
-      }
-
-      .brand {
-        display: flex;
-        align-items: center;
-        gap: 14px;
-        min-width: 0;
-      }
-
-      .brand img {
-        width: 54px;
-        height: 54px;
-        flex: 0 0 auto;
-      }
-
-      .brand h1 {
-        margin: 0;
-        font-size: 22px;
-        line-height: 1.15;
-      }
-
-      .brand p {
-        margin: 4px 0 0;
-        color: #c7d7df;
-      }
-
-      .actions {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: flex-end;
-        gap: 10px;
-      }
-
-      .actions a {
-        border: 1px solid rgba(255, 255, 255, 0.28);
-        border-radius: 6px;
-        padding: 9px 12px;
-        text-decoration: none;
-        font-weight: 700;
-      }
-
-      .actions a.primary {
-        background: #ffffff;
-        color: var(--civic);
-      }
-
       main {
-        display: grid;
-        grid-template-columns: 360px minmax(0, 1fr);
-        gap: 18px;
-        padding: 18px;
-        min-height: calc(100vh - 91px);
-      }
-
-      .summary,
-      .demo-frame {
+        width: min(560px, calc(100% - 32px));
         border: 1px solid var(--line);
         border-radius: 8px;
-        background: var(--panel);
+        background: #ffffff;
+        padding: 28px;
+        text-align: center;
       }
 
-      .summary {
-        padding: 20px;
-        align-self: start;
+      img {
+        width: 76px;
+        height: 76px;
       }
 
-      .summary h2,
-      .summary h3,
-      .summary p {
+      h1 {
+        margin: 14px 0 8px;
+        color: var(--civic);
+        font-size: 26px;
+      }
+
+      p {
         margin: 0;
-      }
-
-      .summary h2 {
-        font-size: 18px;
-      }
-
-      .summary h3 {
-        margin-top: 20px;
-        font-size: 14px;
-        text-transform: uppercase;
-      }
-
-      .summary p,
-      .summary li {
         color: var(--muted);
         line-height: 1.45;
       }
 
-      .summary p {
-        margin-top: 8px;
-      }
-
-      .summary ul,
-      .summary ol {
-        margin: 10px 0 0;
-        padding-left: 20px;
-      }
-
-      .pill {
+      a {
         display: inline-block;
-        margin-top: 14px;
-        border-radius: 999px;
-        background: #f3eee6;
-        color: #704817;
-        padding: 6px 10px;
-        font-size: 12px;
+        margin-top: 18px;
+        border-radius: 8px;
+        background: var(--civic);
+        color: #ffffff;
+        padding: 12px 16px;
+        text-decoration: none;
         font-weight: 700;
-      }
-
-      .demo-frame {
-        min-height: 720px;
-        overflow: hidden;
-      }
-
-      iframe {
-        display: block;
-        width: 100%;
-        height: 100%;
-        min-height: 720px;
-        border: 0;
-        background: #ffffff;
-      }
-
-      @media (max-width: 980px) {
-        .page-header {
-          align-items: flex-start;
-          flex-direction: column;
-        }
-
-        main {
-          grid-template-columns: 1fr;
-        }
-
-        .demo-frame,
-        iframe {
-          min-height: 760px;
-        }
       }
     </style>
   </head>
   <body>
-    <header class="page-header">
-      <div class="brand">
-        <img src="./frontend/assets/fairfax-seal.svg" alt="Fairfax County Virginia seal" />
-        <div>
-          <h1>Fairfax Resource Navigator</h1>
-          <p>Google ADK local demo for source-grounded county service routing</p>
-        </div>
-      </div>
-      <nav class="actions" aria-label="Demo links">
-        <a class="primary" href="./frontend/index.html">Open Full Demo</a>
-        <a href="./FINAL_SUBMISSION_ONE_PAGER.md">One-Pager</a>
-        <a href="./docs/demo_architecture.md">Architecture</a>
-      </nav>
-    </header>
-
     <main>
-      <aside class="summary">
-        <h2>Submission Preview</h2>
-        <p>
-          This static GitHub Pages entry wraps the resident-facing demo UI and
-          links the key submission materials.
-        </p>
-        <span class="pill">Mock-first: no live model API in chat</span>
-
-        <h3>Try These</h3>
-        <ol>
-          <li>I need help with my Fairfax car tax bill.</li>
-          <li>My neighbor is doing unpermitted construction.</li>
-          <li>I need urgent housing or safety help tonight.</li>
-          <li>Summer camp for my 9-year-old who likes sports and STEM.</li>
-        </ol>
-
-        <h3>Coverage</h3>
-        <ul>
-          <li>Housing and basic needs</li>
-          <li>Taxes and revenue</li>
-          <li>Health, CSB, older adults, childcare</li>
-          <li>Parks, camps, and community hubs</li>
-          <li>Permits, code, public works, transportation, public safety</li>
-        </ul>
-
-        <h3>Review Notes</h3>
-        <p>
-          The embedded app is the same static UI in <code>frontend/</code>.
-          For a larger workspace, use Open Full Demo.
-        </p>
-      </aside>
-
-      <section class="demo-frame" aria-label="Embedded Fairfax Resource Navigator demo">
-        <iframe src="./frontend/index.html" title="Fairfax Resource Navigator demo"></iframe>
-      </section>
+      <img src="./frontend/assets/fairfax-seal.svg" alt="Fairfax County Virginia seal" />
+      <h1>Opening Fairfax Resource Navigator</h1>
+      <p>The full demo is loading from the resident-facing app view.</p>
+      <a href="./frontend/index.html">Open Demo</a>
     </main>
+    <script>
+      window.location.replace('./frontend/index.html');
+    </script>
   </body>
 </html>

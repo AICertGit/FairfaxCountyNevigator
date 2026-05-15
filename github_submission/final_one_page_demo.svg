@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="2200" viewBox="0 0 1600 2200" role="img" aria-label="Fairfax County Resource Navigator final one page demo">
+  <title>Fairfax County Resource Navigator Final One Page Demo</title>
+  <defs>
+    <style>
+      .bg { fill: #ffffff; }
+      .wash { fill: #f4f7f8; }
+      .civic { fill: #071f2c; }
+      .title { fill: #ffffff; font: 700 58px Arial, Helvetica, sans-serif; }
+      .subtitle { fill: #d9e8ef; font: 25px Arial, Helvetica, sans-serif; }
+      .eyebrow { fill: #c7d7df; font: 700 20px Arial, Helvetica, sans-serif; letter-spacing: 1px; }
+      .h2 { fill: #071f2c; font: 700 32px Arial, Helvetica, sans-serif; }
+      .h3 { fill: #071f2c; font: 700 23px Arial, Helvetica, sans-serif; }
+      .body { fill: #536574; font: 21px Arial, Helvetica, sans-serif; }
+      .body-dark { fill: #10202b; font: 21px Arial, Helvetica, sans-serif; }
+      .small { fill: #536574; font: 17px Arial, Helvetica, sans-serif; }
+      .code { fill: #ffffff; font: 18px Consolas, 'Courier New', monospace; }
+      .card { fill: #ffffff; stroke: #d7e0e7; stroke-width: 2; }
+      .tint { fill: #f8fbfc; stroke: #d7e0e7; stroke-width: 2; }
+      .green { fill: #eef7ed; stroke: #c6dfc3; stroke-width: 2; }
+      .gold { fill: #fff7e8; stroke: #ead5ad; stroke-width: 2; }
+      .purple { fill: #f2eef8; stroke: #d8cce9; stroke-width: 2; }
+      .blue { fill: #eaf3f7; stroke: #d7e0e7; stroke-width: 2; }
+      .pill { fill: #f8fbfc; stroke: #d7e0e7; stroke-width: 2; }
+      .pill-text { fill: #10202b; font: 700 17px Arial, Helvetica, sans-serif; }
+      .metric { fill: #071f2c; font: 700 34px Arial, Helvetica, sans-serif; }
+      .footer { fill: #ffffff; font: 700 18px Arial, Helvetica, sans-serif; }
+    </style>
+  </defs>
+
+  <rect class="bg" width="1600" height="2200"/>
+  <rect class="civic" x="0" y="0" width="1600" height="290"/>
+  <image href="../frontend/assets/fairfax-seal.svg" x="70" y="64" width="120" height="120"/>
+  <text class="eyebrow" x="220" y="82">GOOGLE PUBLIC SECTOR HACKATHON SUBMISSION</text>
+  <text class="title" x="220" y="138">Fairfax County</text>
+  <text class="title" x="220" y="200">Resource Navigator</text>
+  <text class="subtitle" x="220" y="242">Zero-PII semantic routing from resident intent to official county services.</text>
+
+  <rect x="1060" y="58" width="470" height="176" rx="16" fill="#123446" stroke="#ffffff" stroke-opacity=".22" stroke-width="2"/>
+  <text class="eyebrow" x="1088" y="96">MAJOR LINKS</text>
+  <rect x="1088" y="115" width="414" height="42" rx="8" fill="#ffffff" opacity=".12"/>
+  <text class="code" x="1103" y="142">github.com/AICertGit/FairfaxCountyNevigator</text>
+  <rect x="1088" y="176" width="414" height="42" rx="8" fill="#ffffff" opacity=".12"/>
+  <text class="code" x="1103" y="203">aicertgit.github.io/FairfaxCountyNevigator</text>
+
+  <rect class="card" x="70" y="340" width="705" height="330" rx="16"/>
+  <text class="h2" x="105" y="395">Purpose &amp; Vision</text>
+  <text class="body" x="105" y="440">Residents often know what they need, but not what Fairfax County</text>
+  <text class="body" x="105" y="470">calls it, which department owns it, or which portal has the right</text>
+  <text class="body" x="105" y="500">next step. Fragmented PDFs and department pages can create</text>
+  <text class="body" x="105" y="530">service deserts for people facing time, language, mobility, disability,</text>
+  <text class="body" x="105" y="560">or digital-access barriers.</text>
+  <text class="body" x="105" y="610">The Navigator reframes discovery around intent, supporting</text>
+  <text class="body" x="105" y="640">One Fairfax by making the first step toward help faster, clearer,</text>
+  <text class="body" x="105" y="670">and more equitable.</text>
+
+  <rect class="tint" x="825" y="340" width="705" height="330" rx="16"/>
+  <text class="h2" x="860" y="395">How The Prototype Works</text>
+  <text class="body" x="860" y="440">1. Intake captures a natural-language question and safe context.</text>
+  <text class="body" x="860" y="475">2. SentenceTransformers creates a local semantic embedding.</text>
+  <text class="body" x="860" y="510">3. A Pandas Shadow Database matches service records and tags.</text>
+  <text class="body" x="860" y="545">4. Guardrails route emergencies and avoid eligibility promises.</text>
+  <text class="body" x="860" y="580">5. The UI returns program, reason, next steps, and citations.</text>
+  <text class="body" x="860" y="630">The Shadow Database is service metadata, not resident data.</text>
+
+  <rect class="blue" x="70" y="710" width="460" height="140" rx="16"/>
+  <text class="metric" x="105" y="760">Zero PII</text>
+  <text class="small" x="105" y="795">No full names, exact addresses, SSNs,</text>
+  <text class="small" x="105" y="820">account numbers, or resident records.</text>
+
+  <rect class="blue" x="570" y="710" width="460" height="140" rx="16"/>
+  <text class="metric" x="605" y="760">8 Domains</text>
+  <text class="small" x="605" y="795">Housing, taxes, health, parks, permits,</text>
+  <text class="small" x="605" y="820">utilities, transportation, and safety.</text>
+
+  <rect class="blue" x="1070" y="710" width="460" height="140" rx="16"/>
+  <text class="metric" x="1105" y="760">Cloud Run</text>
+  <text class="small" x="1105" y="795">Stateless Python app pattern ready for</text>
+  <text class="small" x="1105" y="820">containerized Google Cloud deployment.</text>
+
+  <rect class="card" x="70" y="890" width="1460" height="765" rx="16"/>
+  <text class="h2" x="105" y="945">Architecture Flow</text>
+  <image href="../docs/assets/architecture-flow-preview.png" x="105" y="980" width="1390" height="628"/>
+
+  <rect class="pill" x="70" y="1690" width="170" height="52" rx="26"/>
+  <text class="pill-text" x="155" y="1723" text-anchor="middle">Housing &amp; CSP</text>
+  <rect class="pill" x="255" y="1690" width="170" height="52" rx="26"/>
+  <text class="pill-text" x="340" y="1723" text-anchor="middle">Taxes &amp; DTA</text>
+  <rect class="pill" x="440" y="1690" width="220" height="52" rx="26"/>
+  <text class="pill-text" x="550" y="1723" text-anchor="middle">Health, CSB &amp; NCS</text>
+  <rect class="pill" x="675" y="1690" width="190" height="52" rx="26"/>
+  <text class="pill-text" x="770" y="1723" text-anchor="middle">Parks &amp; Youth</text>
+  <rect class="pill" x="880" y="1690" width="190" height="52" rx="26"/>
+  <text class="pill-text" x="975" y="1723" text-anchor="middle">Permits &amp; Code</text>
+  <rect class="pill" x="1085" y="1690" width="170" height="52" rx="26"/>
+  <text class="pill-text" x="1170" y="1723" text-anchor="middle">Public Works</text>
+  <rect class="pill" x="1270" y="1690" width="150" height="52" rx="26"/>
+  <text class="pill-text" x="1345" y="1723" text-anchor="middle">Transport</text>
+
+  <rect class="green" x="70" y="1780" width="1460" height="105" rx="16"/>
+  <text class="h3" x="105" y="1822">Why it wins</text>
+  <text class="body-dark" x="105" y="1858">Rapid deployment, privacy by design, official-source grounding, and immediate citizen impact aligned to One Fairfax equity goals.</text>
+
+  <rect class="green" x="70" y="1920" width="460" height="160" rx="16"/>
+  <text class="h3" x="105" y="1965">Rapid Deployment</text>
+  <text class="small" x="105" y="2000">Runs as a lightweight Python app</text>
+  <text class="small" x="105" y="2025">and can containerize cleanly for</text>
+  <text class="small" x="105" y="2050">Google Cloud Run.</text>
+
+  <rect class="gold" x="570" y="1920" width="460" height="160" rx="16"/>
+  <text class="h3" x="605" y="1965">Privacy By Design</text>
+  <text class="small" x="605" y="2000">Uses service metadata and safe</text>
+  <text class="small" x="605" y="2025">demographic proxies, not resident</text>
+  <text class="small" x="605" y="2050">identity records.</text>
+
+  <rect class="purple" x="1070" y="1920" width="460" height="160" rx="16"/>
+  <text class="h3" x="1105" y="1965">Immediate Impact</text>
+  <text class="small" x="1105" y="2000">Moves residents from "I need help"</text>
+  <text class="small" x="1105" y="2025">to the right county route, department,</text>
+  <text class="small" x="1105" y="2050">or next step in seconds.</text>
+
+  <rect class="civic" x="70" y="2120" width="1460" height="58" rx="12"/>
+  <text class="footer" x="800" y="2157" text-anchor="middle">Demo status: mock-first local prototype; no live model API required for chat.</text>
+</svg>

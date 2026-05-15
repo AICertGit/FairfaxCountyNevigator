@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Fairfax County Resource Navigator - Final Demo One Pager</title>
+    <style>
+      :root {
+        --ink: #10202b;
+        --muted: #536574;
+        --line: #d7e0e7;
+        --wash: #f4f7f8;
+        --civic: #071f2c;
+        --civic-mid: #123446;
+        --blue-wash: #eaf3f7;
+        --gold: #b67822;
+        --green: #4d7b4a;
+        --purple: #6f5f94;
+        --critical: #a94442;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: var(--wash);
+        color: var(--ink);
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .page {
+        width: 1600px;
+        min-height: 2200px;
+        margin: 0 auto;
+        background: #ffffff;
+      }
+
+      header {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 34px;
+        padding: 58px 70px 48px;
+        background: var(--civic);
+        color: #ffffff;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+      }
+
+      .brand img {
+        width: 116px;
+        height: 116px;
+      }
+
+      .eyebrow {
+        margin: 0 0 8px;
+        color: #c7d7df;
+        font-size: 20px;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: 56px;
+        line-height: 1.05;
+        letter-spacing: 0;
+      }
+
+      .tagline {
+        margin: 16px 0 0;
+        max-width: 980px;
+        color: #d9e8ef;
+        font-size: 25px;
+        line-height: 1.35;
+      }
+
+      .links {
+        align-self: center;
+        min-width: 420px;
+        border: 1px solid rgba(255, 255, 255, 0.22);
+        border-radius: 14px;
+        padding: 22px 24px;
+        background: rgba(255, 255, 255, 0.08);
+      }
+
+      .links p {
+        margin: 0 0 12px;
+        color: #c7d7df;
+        font-size: 17px;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+
+      .links code {
+        display: block;
+        margin-top: 10px;
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.12);
+        color: #ffffff;
+        padding: 12px 14px;
+        font-size: 18px;
+        line-height: 1.35;
+        white-space: normal;
+      }
+
+      main {
+        padding: 42px 70px 54px;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: 1.04fr 0.96fr;
+        gap: 28px;
+      }
+
+      .card {
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        background: #ffffff;
+        padding: 30px;
+      }
+
+      .card.tint {
+        background: #f8fbfc;
+      }
+
+      h2 {
+        margin: 0 0 16px;
+        color: var(--civic);
+        font-size: 31px;
+        line-height: 1.15;
+      }
+
+      h3 {
+        margin: 0 0 10px;
+        color: var(--civic);
+        font-size: 22px;
+      }
+
+      p,
+      li {
+        color: var(--muted);
+        font-size: 21px;
+        line-height: 1.45;
+      }
+
+      p {
+        margin: 0;
+      }
+
+      ul,
+      ol {
+        margin: 12px 0 0;
+        padding-left: 25px;
+      }
+
+      li {
+        margin: 8px 0;
+      }
+
+      .metrics {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+        margin-top: 24px;
+      }
+
+      .metric {
+        min-height: 124px;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 20px;
+        background: var(--blue-wash);
+      }
+
+      .metric strong {
+        display: block;
+        color: var(--civic);
+        font-size: 33px;
+        line-height: 1;
+      }
+
+      .metric span {
+        display: block;
+        margin-top: 10px;
+        color: var(--muted);
+        font-size: 17px;
+        line-height: 1.3;
+      }
+
+      .architecture {
+        margin-top: 28px;
+        padding: 28px;
+      }
+
+      .architecture img {
+        display: block;
+        width: 100%;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        background: var(--wash);
+      }
+
+      .coverage {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 14px;
+        margin-top: 18px;
+      }
+
+      .pill {
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: #f8fbfc;
+        padding: 12px 14px;
+        color: var(--ink);
+        font-size: 17px;
+        font-weight: 700;
+        text-align: center;
+      }
+
+      .callout {
+        margin-top: 28px;
+        border-left: 8px solid var(--green);
+        border-radius: 12px;
+        background: #eef7ed;
+        padding: 24px 28px;
+      }
+
+      .callout p {
+        color: var(--ink);
+        font-size: 23px;
+        font-weight: 700;
+      }
+
+      .why {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+        margin-top: 28px;
+      }
+
+      .why article {
+        border-radius: 14px;
+        padding: 24px;
+        min-height: 190px;
+      }
+
+      .why article:nth-child(1) {
+        background: #eef7ed;
+        border: 1px solid #c6dfc3;
+      }
+
+      .why article:nth-child(2) {
+        background: #fff7e8;
+        border: 1px solid #ead5ad;
+      }
+
+      .why article:nth-child(3) {
+        background: #f2eef8;
+        border: 1px solid #d8cce9;
+      }
+
+      footer {
+        display: flex;
+        justify-content: space-between;
+        gap: 24px;
+        margin-top: 32px;
+        border-top: 1px solid var(--line);
+        padding-top: 22px;
+      }
+
+      footer p {
+        font-size: 18px;
+      }
+
+      .small {
+        font-size: 17px;
+      }
+
+      @media print {
+        body {
+          background: #ffffff;
+        }
+
+        .page {
+          width: 1600px;
+          min-height: 2200px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="page">
+      <header>
+        <div class="brand">
+          <img src="../frontend/assets/fairfax-seal.svg" alt="Fairfax County Virginia seal" />
+          <div>
+            <p class="eyebrow">Google Public Sector Hackathon Submission</p>
+            <h1>Fairfax County Resource Navigator</h1>
+            <p class="tagline">
+              A Zero-PII semantic routing prototype that turns natural-language resident needs
+              into source-grounded Fairfax County service recommendations.
+            </p>
+          </div>
+        </div>
+        <aside class="links">
+          <p>Major Links</p>
+          <code>github.com/AICertGit/FairfaxCountyNevigator</code>
+          <code>aicertgit.github.io/FairfaxCountyNevigator/</code>
+        </aside>
+      </header>
+
+      <main>
+        <section class="grid">
+          <article class="card">
+            <h2>Purpose & Vision</h2>
+            <p>
+              Residents often know what they need, but not what Fairfax County calls it,
+              which department owns it, or which portal contains the right next step.
+              Fragmented discovery across PDFs, department pages, and program sites can
+              create service deserts for residents already facing time, language, mobility,
+              disability, or digital-access barriers.
+            </p>
+            <p style="margin-top: 18px;">
+              The Resource Navigator reframes discovery around intent. Residents ask in
+              plain language, share only safe context such as ZIP code, age, household size,
+              or interests, and receive an official-source route. The result supports
+              One Fairfax by making the first step toward help faster, clearer, and more equitable.
+            </p>
+          </article>
+
+          <article class="card tint">
+            <h2>How The Prototype Works</h2>
+            <ol>
+              <li>Streamlit-style intake captures a natural-language question and non-PII context.</li>
+              <li>A local SentenceTransformers embedding model converts intent into a semantic vector.</li>
+              <li>A Pandas Shadow Database matches against service records, tags, age/ZIP hints, and citations.</li>
+              <li>Guardrails route emergencies to 911 or CSB crisis support and avoid eligibility promises.</li>
+              <li>The UI returns the department, program, reason for match, next steps, and source citations.</li>
+            </ol>
+          </article>
+        </section>
+
+        <section class="metrics">
+          <div class="metric">
+            <strong>Zero PII</strong>
+            <span>No full names, exact addresses, SSNs, account numbers, or resident records required.</span>
+          </div>
+          <div class="metric">
+            <strong>8 Domains</strong>
+            <span>Housing, taxes, health, parks, permits, utilities, transportation, and safety.</span>
+          </div>
+          <div class="metric">
+            <strong>Cloud Run</strong>
+            <span>Stateless Python app pattern is ready for containerized Google Cloud deployment.</span>
+          </div>
+        </section>
+
+        <section class="card architecture">
+          <h2>Architecture Flow</h2>
+          <img src="../docs/assets/architecture-flow-preview.png" alt="Architecture flow diagram" />
+        </section>
+
+        <section class="coverage" aria-label="Service coverage">
+          <div class="pill">Housing & CSP</div>
+          <div class="pill">Taxes & DTA</div>
+          <div class="pill">Health, CSB & NCS</div>
+          <div class="pill">Parks & Youth</div>
+          <div class="pill">Permits & Code</div>
+          <div class="pill">Public Works</div>
+          <div class="pill">Transportation</div>
+          <div class="pill">Public Safety</div>
+        </section>
+
+        <section class="callout">
+          <p>
+            Why it wins: rapid deployment, privacy by design, official-source grounding,
+            and immediate citizen impact aligned to One Fairfax equity goals.
+          </p>
+        </section>
+
+        <section class="why">
+          <article>
+            <h3>Rapid Deployment</h3>
+            <p class="small">
+              Runs as a lightweight Python app for demos and can containerize cleanly
+              for Cloud Run without a complex infrastructure footprint.
+            </p>
+          </article>
+          <article>
+            <h3>Privacy By Design</h3>
+            <p class="small">
+              The Shadow Database is service metadata, not resident data. Matching uses
+              safe demographic proxies only when they improve routing.
+            </p>
+          </article>
+          <article>
+            <h3>Immediate Impact</h3>
+            <p class="small">
+              Helps residents move from "I need help" to the right county service,
+              department, or next step in seconds.
+            </p>
+          </article>
+        </section>
+
+        <footer>
+          <p><strong>Demo status:</strong> mock-first local prototype; no live model API required for chat.</p>
+          <p><strong>Submission assets:</strong> README, one-pager, architecture, service catalog, and GitHub Pages wrapper.</p>
+        </footer>
+      </main>
+    </section>
+  </body>
+</html>
